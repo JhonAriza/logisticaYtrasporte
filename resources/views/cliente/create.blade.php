@@ -17,13 +17,29 @@
     
 </body>
 </html>
- 
+ <div class="row">
+    <di class="col-2"></di>
+    <di class="col-2"> 
+        <form class="d-flex"  action="{{ route('cliente.create' )}}" methods="GET">
+        <input  class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="busqueda">
+        <button class="btn btn-outline-success" value="énviar" type="submit">Buscar</button>
+      </form>
+    </di>
+    
+    <di class="col-2"></di>
+    <di class="col-2"></di>
+    <di class="col-2"></di>
+    <di class="col-2"></di>
+ </div>
 
+   
+                    @foreach($notas as $item)
 <form action="{{ url('/cliente') }} "   class="needs-validation" novalidate method="POST" enctype="multipart/form-data">
 @csrf
 
 @include('cliente.form',['modo'=>'Guardar'])
 </form>
-
-
+    
+ 
+@endforeach
 @endsection

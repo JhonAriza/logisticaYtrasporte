@@ -11,9 +11,16 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
 
-    <!-- Scripts -->
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -37,12 +44,18 @@
                     <a  class="navbar-brand" href="{{ route('home') }}"> </a>
                     </li>
                     </ul>
+
                     <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                     <a  class="navbar-brand" href="{{ route('home') }}">{{ __('home') }}</a>
                     </li>
                     </ul>
 
+                    <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                    <a  class="navbar-brand" href="{{ route('evento.index') }}">{{ __('evento') }}</a>
+                    </li>
+                    </ul>
 
                     <ul class="navbar-nav me-auto">
                     <li class="nav-item">
@@ -101,7 +114,7 @@
                 </div>
             </div>
         </nav>
-
+        @vite(['resources/sass/app.scss', 'resources/js/agenda.js'])
         <main class="py-4">
             @yield('content')
         </main>

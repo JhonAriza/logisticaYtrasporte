@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 use App\Models\Ruta;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use App\Models\Note;
 
 class ClienteController extends Controller
 {
-    public $search = '';
+    public $search = ' ';
+   public $busqueda = '';
     /**
      * Display a listing of the resource.
      *
@@ -31,11 +33,20 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(Request $request)
+    {     $notas['notas']= Note::all();
+
         
+        $busqueda = $request->busqueda;
+
+            $notas['notas']= Note::where('nombre',  'like', '%' . $busqueda . '%')
+            ->orwhere('apellido','like', '%' . $busqueda . '%')
+            ->orwhere('documento','like', '%' . $busqueda . '%')
+             ->paginate(1);
+             
+
         $ruta['rutas']=Ruta::paginate(10);
-        return view('cliente.create',$ruta);
+        return view('cliente.create',$ruta,$notas);
     }
 
     /**
@@ -104,8 +115,9 @@ class ClienteController extends Controller
     public function destroy($id)
     {
         {
-            $item=Ruta::findOrfail($id);
-           
+            
+            $item=Cliente::findOrfail($id);
+           Cliente::destroy($id);
             return redirect('cliente')->with('mensaje','Borrado con exito');;
         }
     }

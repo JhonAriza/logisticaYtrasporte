@@ -15,6 +15,18 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+
+
+               
+                    @foreach($notas as $item)
+                    <td>
+                        <div>{{$item}} </div>
+                    </td>
+                    @endforeach  
+   
+ 
+
                 </div>
             </div>
         </div>

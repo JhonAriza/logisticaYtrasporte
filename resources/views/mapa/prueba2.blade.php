@@ -138,3 +138,48 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi3QPmKew6ZyLMcOhhU9qfH1lE_co6oys&callback=iniciarMapa"></script>
 @endsection
+
+
+<!-- <script>
+    function iniciarMapa() {
+var start_r  =   4.646119541485224 -74.07766799996381;
+var end_r =  4.646119541485224 -76.07766799996381;
+coordenadas = {
+    start: start_r,
+    end: end_r
+}
+    
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: {
+                lat: 4.761784564993355,
+                lng: -74.03705835979353
+            }
+        });
+       
+
+        directionsDisplay.setMap(map);
+        var start = new google.maps.LatLng(coordenadas.start_r);
+        var end = new google.maps.LatLng(coordenadas.end_r);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: 'DRIVING'
+        };
+        directionsService.route(request, function(result, status) {
+            if (status == 'OK') {
+                directionsDisplay.setDirections(result);
+            }
+        });
+
+        $(document).on('change1', '#ruta', function(event) {
+       rutaEnvia = $('#servicioSelecionado').val($("#ruta option:selected").text());
+    });
+
+    $(document).on('change', '#ruta2', function(event) {
+       rutaEnvia2 = $('#servicioSelecionado2').val($("#ruta2 option:selected").text());
+    });
+    }
+</script> -->

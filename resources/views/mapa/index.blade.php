@@ -5,6 +5,7 @@
 
 <div class="container">
 
+<img src="{{URL::asset('/img/j.jpg')}}" width="50%" class="sidebar-toggle" data-toggle="push-menu" role="button">
 
     <div class="row">
         <div class="col-9">
@@ -29,7 +30,7 @@
 
             <div class="row">
                 <div class='mb4'>
-                    <select id="ruta" onchange="Draw_rute(this.value)" class="form-control" name="ruta_id" required>
+                    <select id="ruta"   class="form-control" name="ruta_id" required>
                         <option value="">Selelecionar Ruta <b>A</b></option>
                         @foreach($rutas as $item)
                         <option value="{{ $item->id }}">
@@ -38,14 +39,12 @@
                         </option>
                         @endforeach
                     </select>
-                    <input type='hidden' id="servicioSelecionado" name="nom_Servicio" >
+                    <input  id="servicioSelecionado" name="servicioSelecionado" >
                 </div>
             </div>
             <br>
             <div class="row">
                 <br>
-
-
 
                 <div class='mb4'>
                     <select id="ruta2"  class="form-control" name="ruta_id2" required>
@@ -57,8 +56,8 @@
                         </option>
                         @endforeach
                     </select>
-                  <input hidden id="servicioSelecionado2" name="servicioSelecionado2">  
-                 
+                  <input   id="servicioSelecionado2" name="servicioSelecionado2">  
+        
                 </div>
 
  
@@ -87,16 +86,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
-
  
-
     function iniciarMapa() {
-var start_r  =   4.646119541485224 -74.07766799996381;
-var end_r =  4.646119541485224 -76.07766799996381;
-coordenadas = {
-    start: start_r,
-    end: end_r
-}
+ 
     
         var directionsService = new google.maps.DirectionsService();
         var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -108,10 +100,9 @@ coordenadas = {
             }
         });
        
-
         directionsDisplay.setMap(map);
-        var start = new google.maps.LatLng(coordenadas.start_r);
-        var end = new google.maps.LatLng(coordenadas.end_r);
+        var start = new google.maps.LatLng(5.149876706205327, -74.52189172941029);
+        var end = new google.maps.LatLng(4.890999326851274, -74.4439293520081);
         var request = {
             origin: start,
             destination: end,
@@ -123,21 +114,16 @@ coordenadas = {
             }
         });
 
-        $(document).on('change1', '#ruta', function(event) {
+        $(document).on('change', '#ruta', function(event) {
        rutaEnvia = $('#servicioSelecionado').val($("#ruta option:selected").text());
-    });
+       alert(rutaEnvia);
+       });
 
     $(document).on('change', '#ruta2', function(event) {
        rutaEnvia2 = $('#servicioSelecionado2').val($("#ruta2 option:selected").text());
     });
-
-
-
-      
+ 
     }
-
-
-
  
 </script>
 

@@ -27,7 +27,8 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
-
+//  aca se  hace la referenciacion  a las rutas que estan sirviendo atravez de wen y api
+//se diferencian 
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
@@ -43,6 +44,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    // esta funcion configureRateLimiting define la maxima solicitudes por minuto
+    // solo permite realizar 60 solicitudes
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {

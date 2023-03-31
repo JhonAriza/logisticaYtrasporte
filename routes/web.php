@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RutaController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MapaController;
 
 /*
@@ -26,4 +27,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('ruta',RutaController::class)->middleware('auth');
 Route::resource('cliente',ClienteController::class)->middleware('auth');
 Route::resource('mapa',MapaController::class)->middleware('auth');
+Route::resource('evento',EventoController::class)->middleware('auth');
+
+ 
+Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class,'store']);
+ 
+ 
+
+
+ 
  
