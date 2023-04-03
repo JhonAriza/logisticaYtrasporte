@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EventoController extends Controller
 {
@@ -13,7 +14,8 @@ class EventoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        
       return view('evento.index');
    
 
@@ -49,6 +51,12 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
+
+        
+       
+         $evento= Evento::all();
+    
+        return response()->json($evento);
         
     }
 
@@ -58,9 +66,9 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Evento $evento)
+    public function edit($id)
     {
-        //
+       
     }
 
     /**

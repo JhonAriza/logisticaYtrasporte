@@ -7,7 +7,8 @@
                 <div class="card-header">{{ __('Calendario') }}</div>
 
                 <div class="card-body">
-         
+ 
+   
                 <div class="container">
                 <div id="agenda">
  
@@ -43,7 +44,7 @@
   <small id="helpId" class="form-text text-muted">Help text</small>
 </div>
 
-
+ 
 <div class="form-group">
   <label for="">descripcion</label>
   <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>

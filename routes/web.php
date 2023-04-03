@@ -20,6 +20,7 @@ use App\Http\Controllers\MapaController;
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class,'show']);
  
 
 Auth::routes();
@@ -30,7 +31,8 @@ Route::resource('mapa',MapaController::class)->middleware('auth');
 Route::resource('evento',EventoController::class)->middleware('auth');
 
  
-Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class,'store']);
+
+ 
  
  
 
