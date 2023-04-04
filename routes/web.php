@@ -20,8 +20,14 @@ use App\Http\Controllers\MapaController;
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class,'show']);
- 
+
+Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class,'show'])->middleware('auth');
+Route::post('/evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit'])->middleware('auth');
+Route::post('/evento/actualizar/{evento}', [App\Http\Controllers\EventoController::class, 'update'])->middleware('auth');
+Route::post('/evento/borrar/{id}', [App\Http\Controllers\EventoController::class,'destroy'])->middleware('auth');
+
+
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
