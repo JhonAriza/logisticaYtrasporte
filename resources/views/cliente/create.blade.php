@@ -17,7 +17,9 @@
     
 </body>
 </html>
- <div class="row">
+ <div class="row"> <h4>ojo</h4>     <p>para que funcione el crear debe tener al menos un registro por que esta consultando los 
+  registros de la api para poder crear en base a la base de datos</p>
+
     <di class="col-2"></di>
     <di class="col-2"> 
         <form class="d-flex"  action="{{ route('cliente.create' )}}" methods="GET">
@@ -31,10 +33,12 @@
     <di class="col-2"></di>
     <di class="col-2"></di>
  </div>
-
+// vamos a enviar el formulario con la propiedad accion con la url a donde lo quiero enviar en este caso es ala ruta cliente 
+// atravez del metodo post 
    
                     @foreach($notas as $item)
 <form action="{{ url('/cliente') }} "   class="needs-validation" novalidate method="POST" enctype="multipart/form-data">
+//lave de seguridad de laravel 
 @csrf
 
 @include('cliente.form',['modo'=>'Guardar'])
@@ -43,3 +47,4 @@
  
 @endforeach
 @endsection
+ 

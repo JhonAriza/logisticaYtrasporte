@@ -5,6 +5,8 @@
     <div class="row">
     <div class="col-6">
         <label for="documento">documento</label>
+// aca  se obtiene el valor del registro  si existe  sino no muestra nada value="{{ isset($item->documento) ?$item->documento:'' }}"
+
         <input type="text" class="form-control" required  name="documento" id="documento" value="{{ isset($item->documento)?$item->documento:'' }}">
         <div class="valid-feedback">Cargando..</div>
         <div class="invalid-feedback">Falta llenar el campo documento</div>

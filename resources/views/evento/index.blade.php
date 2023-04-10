@@ -26,6 +26,8 @@
       <div class="modal-body">
 
        <form action="" id="form">
+        <!-- // se crea  una llave para poder
+        // trabajar los datos es una parte de seguridad un token que se genera  -->
        @csrf
 <div class="form-group d-none">
   <label for="">id</label>
@@ -44,7 +46,8 @@
   <label for="">descripcion</label>
   <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
 </div>
-
+<!-- el tido de dato del parametro start y end esta en tipo txt por que 
+al pasarlo a tipo date no se muestra la fecha al recuperar y genera error al modificar -->
 <div class="form-group  d-none">
   <label for="">start</label>
   <input type="text" class="form-control" name="start" id="start" >

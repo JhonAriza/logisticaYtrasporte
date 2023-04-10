@@ -13,6 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
+        // al momento de crear un usuario nuevo al migrarla 
+        //base de datos hay que seleccionar como null ala propiedad lastname 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');

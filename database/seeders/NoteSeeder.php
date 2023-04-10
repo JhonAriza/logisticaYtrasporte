@@ -16,7 +16,7 @@ class NoteSeeder extends Seeder
     {
         Note::create([
           
-            'documento'=> 'zona occidente',
+            'documento'=> '56456456',
             'nombre' => 'alex el mejor',
             'apellido'=> 'ariza duarte'
         ]);

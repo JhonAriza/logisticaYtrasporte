@@ -10,15 +10,16 @@ class Evento extends Model
     use HasFactory;
 
        
-    //  campos que se estan trabajando especificamente
-    
+    //  campos que se estan trabajando especificamente 
+    // y que son requeridos
 
     static $rules=[
         'title'=>'required',
+        'descripcion'=>'required',
         'start'=>'required',
         'end'=>'required'
     ];
-
+// se distingue los campos que estoy trabajando
     protected $fillable=['title','descripcion','start','end'];
 
 }

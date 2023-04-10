@@ -158,7 +158,7 @@
                                             <div>{{ $item->longitud }} </div>
                                         </td>
 
-
+// vamos a enviar esta informacion a empleado le envia el id  pero voy a usar la funcion edit
                                         <td> <a href="{{ url('/cliente/'.$item->id.'/edit') }}" class="btn btn-success">Editar </a>
                                         </td>
 
@@ -166,6 +166,7 @@
 
                                             <form action="{{ url('/cliente/'.$item->id) }}" method="POST">
                                                 @csrf
+                                                // se tiene un metodo con el DELETE para que  acepte el borrado con el id que se le esta pasando atravez del boton
                                                 {{ method_field('DELETE') }}
                                                 <input type="submit" class="btn btn-danger" onclick="return confirm('quieres borrar=?')" value="Delete">
                                             </form>
