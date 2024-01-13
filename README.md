@@ -1,4 +1,5 @@
 CLONAR PROYECTO logisticaYtrasporte
+
 1.git clone https://github.com/JhonAriza/logisticaYtrasporte.git
 
 2.cd logisticaytrasporte
